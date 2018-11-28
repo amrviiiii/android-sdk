@@ -12,8 +12,6 @@ RUN apt-get --quiet update --yes \
   && echo y | android-sdk-linux/tools/bin/sdkmanager "platforms;android-${ANDROID_COMPILE_SDK}" >/dev/null \
   && echo y | android-sdk-linux/tools/bin/sdkmanager "platform-tools" >/dev/null \
   && echo y | android-sdk-linux/tools/bin/sdkmanager "build-tools;${ANDROID_BUILD_TOOLS}" >/dev/null \
-  && export ANDROID_HOME=$PWD/android-sdk-linux \
-  && export PATH=$PATH:$PWD/android-sdk-linux/platform-tools/ \
   && set +o pipefail \
   && yes | android-sdk-linux/tools/bin/sdkmanager --licenses \
   && set -o pipefail 
